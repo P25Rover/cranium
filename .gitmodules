@@ -1,0 +1,12 @@
+[submodule "src/synapse_msgs"]
+	path = src/synapse_msgs
+	url = https://github.com/P25Rover/synapse_msgs
+[submodule "src/synapse_protobuf"]
+	path = src/synapse_protobuf
+	url = https://github.com/P25Rover/synapse_protobuf
+[submodule "src/synapse_tinyframe"]
+	path = src/synapse_tinyframe
+	url = https://github.com/P25Rover/synapse_tinyframe
+[submodule "src/synapse_ros"]
+	path = src/synapse_ros
+	url = https://github.com/P25Rover/synapse_ros

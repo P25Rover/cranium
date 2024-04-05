@@ -1,0 +1,15 @@
+<launch>
+  <arg name="device" default="/dev/video3"/>
+  <arg name="fps" default="30"/>
+  <arg name="width" default="320"/>
+  <arg name="height" default="240"/>
+
+  <node namespace="" name="ov5645" pkg="gscam" exec="gscam_node" output="screen">
+    <param name="camera_name" value="camera"/>
+    <param name="camera_frame" value="camera_link_optical"/>
+    <param name="camera_info_url" value="package://b3rb_bringup/config/ov5645.ini"/>
+    <param name="gscam_config" value="v4l2src device=$(var device) ! video/x-raw,format=BGRx,framerate=$(var fps)/1,width=$(var width),height=$(var height) ! imxvideoconvert_g2d rotation=2 ! video/x-raw,format=BGRx,framerate=$(var fps)/1,width=$(var width),height=$(var height) ! videoconvert ! video/x-raw,format=BGR"/>
+    <param name="frame_id" value="camera_link_optical"/>
+    <param name="sync_sink" value="true"/>
+  </node>
+</launch>
